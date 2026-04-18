@@ -1,4 +1,5 @@
 import argv
+import demo_vars/internal
 import envoy
 import gleam/io
 import gleam/result
@@ -14,9 +15,5 @@ fn get(name: String) -> Nil {
   let value =
     envoy.get(name)
     |> result.unwrap("")
-  io.println(format_pair(name, value))
-}
-
-fn format_pair(name: String, value: String) -> String {
-  name <> "=" <> value
+  io.println(internal.format_pair(name, value))
 }
